@@ -34,7 +34,7 @@ const SingleProductPage = () => {
 				history.push('/')
 			}, 3000)
 		}
-	}, [error])
+	}, [])
 
 	if (loading) {
 		return <Loading />
@@ -53,31 +53,30 @@ const SingleProductPage = () => {
 		company,
 		images,
 	} = product
-
 	return (
 		<Wrapper>
 			<PageHero title={name} product />
 			<div className='section section-center page'>
-				<Link to='products' className='btn'>
+				<Link to='/products' className='btn'>
 					back to products
 				</Link>
 				<div className='product-center'>
-					<ProductImages />
+					<ProductImages images={images} />
 					<section className='content'>
 						<h2>{name}</h2>
 						<Stars />
 						<h5 className='price'>{formatPrice(price)}</h5>
 						<p className='desc'>{description}</p>
 						<p className='info'>
-							<span>Available : </span>
-							{stock > 0 ? 'In stock' : 'out of stock'}
+							<span>Available: </span>
+							{stock > 0 ? 'In Stock' : 'Out of Stock'}
 						</p>
 						<p className='info'>
-							<span>SKU : </span>
+							<span>SKU: </span>
 							{sku}
 						</p>
 						<p className='info'>
-							<span>Brand:</span>
+							<span>Brand: </span>
 							{company}
 						</p>
 						<hr />
@@ -111,7 +110,6 @@ const Wrapper = styled.main`
 			font-weight: 700;
 		}
 	}
-
 	@media (min-width: 992px) {
 		.product-center {
 			grid-template-columns: 1fr 1fr;
