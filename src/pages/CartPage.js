@@ -19,7 +19,14 @@ const CartPage = () => {
 		)
 	}
 
-	return <main></main>
+	return (
+		<main>
+			<PageHero title='cart' />
+			<Wrapper className='page'>
+				<CartContent />
+			</Wrapper>
+		</main>
+	)
 }
 
 const Wrapper = styled.main`
