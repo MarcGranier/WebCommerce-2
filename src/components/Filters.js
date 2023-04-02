@@ -136,7 +136,7 @@ const Filters = () => {
 					{/* end of price */}
 					{/* shipping */}
 					<div className='form-control shipping'>
-						<lable htmlFor='shipping'>free shipping</lable>
+						<labe htmlFor='shipping'>free shipping</labe>
 						<input
 							type='checkbox'
 							name='shipping'
@@ -147,7 +147,7 @@ const Filters = () => {
 					</div>
 					{/* end of shipping */}
 				</form>
-				<button type='button' className='clear-btn' OnClick={clearFilters}>
+				<button type='button' className='clear-btn' onClick={clearFilters}>
 					{' '}
 					clear filters
 				</button>
