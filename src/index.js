@@ -20,12 +20,14 @@ root.render(
 		}}
 		cacheLocation='localstorage'
 	>
-		<ProductsProvider>
-			<FilterProvider>
-				<CartProvider>
-					<App />
-				</CartProvider>
-			</FilterProvider>
-		</ProductsProvider>
+		<UserProvider>
+			<ProductsProvider>
+				<FilterProvider>
+					<CartProvider>
+						<App />
+					</CartProvider>
+				</FilterProvider>
+			</ProductsProvider>
+		</UserProvider>
 	</Auth0Provider>
 )
