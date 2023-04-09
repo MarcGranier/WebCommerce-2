@@ -7,6 +7,8 @@ export const UserProvider = ({ children }) => {
 	const { isAuthenticated, loginwithRedirect, logout, user, isLoading } =
 		useAuth0()
 
+	const [myUser, setMyUser] = useState(null)
+
 	useEffect(() => {
 		console.log(`user':${user}`)
 		console.log(`isAuthenticated':${isAuthenticated}`)
@@ -14,7 +16,9 @@ export const UserProvider = ({ children }) => {
 	}, [isAuthenticated])
 
 	return (
-		<UserContext.Provider value='user context'>{children}</UserContext.Provider>
+		<UserContext.Provider value={{ loginwithRedirect, logout, myUser }}>
+			{children}
+		</UserContext.Provider>
 	)
 }
 // make sure use
