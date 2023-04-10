@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import { unmountComponentAtNode } from 'react-dom'
 
 const UserContext = React.createContext()
 export const UserProvider = ({ children }) => {
-	const { isAuthenticated, loginwithRedirect, logout, user, isLoading } =
+	const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
 		useAuth0()
-
 	const [myUser, setMyUser] = useState(null)
 
 	useEffect(() => {
@@ -16,7 +14,7 @@ export const UserProvider = ({ children }) => {
 	}, [isAuthenticated])
 
 	return (
-		<UserContext.Provider value={{ loginwithRedirect, logout, myUser }}>
+		<UserContext.Provider value={{ loginWithRedirect, logout, myUser }}>
 			{children}
 		</UserContext.Provider>
 	)
