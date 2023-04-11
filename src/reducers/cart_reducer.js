@@ -3,7 +3,7 @@ import {
 	CLEAR_CART,
 	COUNT_CART_TOTALS,
 	REMOVE_CART_ITEM,
-	TOGGLE_CART_ITEM_AMOUNT,
+	TOGGLE_CART_ITEM_AMOUNT
 } from '../actions'
 
 const cart_reducer = (state, action) => {
@@ -32,7 +32,7 @@ const cart_reducer = (state, action) => {
 				amount,
 				image: product.images[0].url,
 				price: product.price,
-				max: product.stock,
+				max: product.stock
 			}
 			return { ...state, cart: [...state.cart, newItem] }
 		}
@@ -77,7 +77,7 @@ const cart_reducer = (state, action) => {
 			},
 			{
 				total_items: 0,
-				total_amount: 0,
+				total_amount: 0
 			}
 		)
 		return { ...state, total_items, total_amount }
